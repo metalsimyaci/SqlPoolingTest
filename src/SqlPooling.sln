@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlPooling.Console", "SqlPooling.Console\SqlPooling.Console.csproj", "{89B0B8DC-1254-4DCB-9E23-18C31BFE2D07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89B0B8DC-1254-4DCB-9E23-18C31BFE2D07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89B0B8DC-1254-4DCB-9E23-18C31BFE2D07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89B0B8DC-1254-4DCB-9E23-18C31BFE2D07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89B0B8DC-1254-4DCB-9E23-18C31BFE2D07}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E9E615BE-F45F-4FA0-B60D-93DF45BD0F14}
+	EndGlobalSection
+EndGlobal
