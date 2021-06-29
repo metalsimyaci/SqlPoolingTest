@@ -14,13 +14,16 @@ namespace SqlPooling.Console
         
         private const int TEST_COUNT = 5;
 
-        static async Task Main(string[] args)
+
+        public static async Task Main(string[] args)
         {
             System.Console.WriteLine("### Uygulama ####");
 
-            var query = "select count(*) from MyTable";
-            await TestingAsync("POOLING_CONNECTION",CONNECTION_STRING_WITH_POOLING, query);
-            await TestingAsync("WITHOUT_POOLING_CONNECTION",CONNECTION_STRING_WITHOUT_POOLING,query );
+            var queryWithPooling = "select count(*) from MyTable";
+            await TestingAsync("POOLING_CONNECTION",CONNECTION_STRING_WITH_POOLING, queryWithPooling);
+
+            var queryWithoutPooling = "select count(Name) from MyTable";
+            await TestingAsync("WITHOUT_POOLING_CONNECTION",CONNECTION_STRING_WITHOUT_POOLING,queryWithoutPooling );
 
             System.Console.WriteLine("#################");
             System.Console.ReadLine();
@@ -38,6 +41,7 @@ namespace SqlPooling.Console
                 PrintConsole(result);
             }
             sw.Stop();
+            sw.Stop();
             System.Console.WriteLine($"### {DateTime.Now:dd-MM-YYYY HH:mm:ss.fff} Total Duration:{sw.Elapsed:G} {title} ENDED ####");
         }
         private static void PrintConsole(string content)
@@ -49,7 +53,9 @@ namespace SqlPooling.Console
             var sb = new StringBuilder();
             await using var sqlConnection = new SqlConnection(connectionString);
             await using var sqlCommand= new SqlCommand(query,sqlConnection);
+            
             await sqlConnection.OpenAsync();
+            
             await using var reader= await sqlCommand.ExecuteReaderAsync();
             while (await reader.ReadAsync())
             {
